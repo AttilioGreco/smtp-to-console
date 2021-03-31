@@ -1,0 +1,15 @@
+version: "3"
+services:
+  smtp-local:
+    build: .
+    ports:
+      - "1025:1025"
+    environment:
+      STMP_PORT: ":1025"
+      SMTP_DOMAIN: "localhost"
+      WRITE_TIMEOUT: "2m"
+      SMTP_READTIMEOUT: "2m"
+      MAX_MESSAGE_KBYTES: "1024"
+      MAX_RECIPIENTS: "20"
+      LOGIN_USERNAME: "john@doe.tld"
+      LOGIN_PASSWORD: "v3ryv3rys3cr3t"
