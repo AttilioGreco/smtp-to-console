@@ -5,8 +5,8 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
-	"time"
 	"strconv"
+	"time"
 
 	"github.com/emersion/go-smtp"
 	"gitlab.com/avarf/getenvs"
@@ -16,8 +16,8 @@ import (
 type Backend struct{}
 
 type user struct {
-    username string
-    password string
+	username string
+	password string
 }
 
 // Login handles a login command with username and password.
@@ -65,12 +65,10 @@ func (s *Session) Logout() error {
 	return nil
 }
 
-
 func newUser(name, password string) *user {
-    u := user{username: name, password: password}
-    return &u
+	u := user{username: name, password: password}
+	return &u
 }
-
 
 func main() {
 	be := &Backend{}
@@ -103,8 +101,6 @@ func main() {
 	s.MaxMessageBytes = MaxMessageKBytesInt * 1024
 	s.MaxRecipients = MaxRecipientsInt
 	s.AllowInsecureAuth = true
-
-
 
 	log.Println("Starting server at")
 	log.Println("")
